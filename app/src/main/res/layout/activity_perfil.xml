@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/imgPerfil"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/foto_perfil"
+        android:contentDescription="Foto de perfil"
+        android:layout_marginBottom="25dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gabriel Guerrero Romero"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingeniería en Sistemas Computacionales"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8.º semestre"
+        android:textSize="16sp"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Promedio actual: 9.14"
+        android:textSize="16sp"
+        android:layout_marginBottom="25dp" />
+
+    <Button
+        android:id="@+id/btnRegresarPerfil"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:text="Regresar" />
+
+</LinearLayout>
