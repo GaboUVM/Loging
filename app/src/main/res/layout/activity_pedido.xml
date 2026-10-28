@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Configura tu Orden"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Especialidad de la Pizza:"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spEspecialidad"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:entries="@array/especialidades_pizza"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Selecciona el Tamaño:"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/rgTamaño"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rbIndividual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Individual ($100 MXN)"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/rbMediana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mediana ($150 MXN)" />
+
+            <RadioButton
+                android:id="@+id/rbFamiliar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Familiar ($200 MXN)" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Ingredientes Adicionales y Extras:"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/cbQueso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Extra Queso (+$20 MXN)" />
+
+        <CheckBox
+            android:id="@+id/cbPepperoni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pepperoni (+$25 MXN)" />
+
+        <CheckBox
+            android:id="@+id/cbChampinones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Champiñones (+$15 MXN)" />
+
+        <CheckBox
+            android:id="@+id/cbRefresco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refresco de 2L (+$35 MXN)" />
+
+        <Switch
+            android:id="@+id/swEnvio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Envío Express a Domicilio (+$30 MXN)" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="4. Forma de Pago:"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spPago"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:entries="@array/opciones_pago"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnCalcular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calcular y Confirmar Pedido" />
+
+    </LinearLayout>
+</ScrollView>

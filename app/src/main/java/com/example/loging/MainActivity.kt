@@ -4,65 +4,59 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val etUser = findViewById<EditText>(R.id.etUser)
-        val etPassword = findViewById<EditText>(R.id.etPassword)
-        val btnLogin = findViewById<Button>(R.id.btnLogin)
+        val etNombre = findViewById<EditText>(R.id.etNombre)
+        val etTelefono = findViewById<EditText>(R.id.etTelefono)
+        val etDireccion = findViewById<EditText>(R.id.etDireccion)
+        val btnVerMenu = findViewById<Button>(R.id.btnVerMenu)
+        val btnNuevoPedido = findViewById<Button>(R.id.btnNuevoPedido)
 
-        btnLogin.setOnClickListener {
+        btnVerMenu.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Nuestras Especialidades")
+            builder.setMessage(
+                "• Hawaiana: Jamón y Piña\n" +
+                        "• Pepperoni Tradicional: Pepperoni y Doble Queso\n" +
+                        "• Mexicana: Chorizo, Jalapeño y Cebolla\n" +
+                        "• Suprema: Carnes Frías y Vegetales\n\n" +
+                        "Precios base:\n" +
+                        "Individual: $100 | Mediana: $150 | Familiar: $200"
+            )
+            builder.setPositiveButton("Entendido", null)
+            builder.show()
+        }
 
-            val usuario = etUser.text.toString().trim()
-            val password = etPassword.text.toString().trim()
+        btnNuevoPedido.setOnClickListener {
+            val nombre = etNombre.text.toString().trim()
+            val telefono = etTelefono.text.toString().trim()
+            val direccion = etDireccion.text.toString().trim()
 
-            if (usuario.isEmpty()) {
-
-                etUser.error = "El usuario no puede estar vacío"
-
-                Toast.makeText(
-                    this,
-                    "Escribe tu usuario",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-            } else if (password.isEmpty()) {
-
-                etPassword.error = "La contraseña no puede estar vacía"
-
-                Toast.makeText(
-                    this,
-                    "Escribe tu contraseña",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-            } else if (usuario == "admin" && password == "1234") {
-
-                Toast.makeText(
-                    this,
-                    "Inicio de sesión correcto",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-                val intent = Intent(this, WelcomeActivity::class.java)
-                intent.putExtra("EXTRA_USUARIO", usuario)
-                startActivity(intent)
-                finish()
-
-            } else {
-
-                Toast.makeText(
-                    this,
-                    "Usuario o contraseña incorrectos",
-                    Toast.LENGTH_SHORT
-                ).show()
+            if (nombre.isEmpty()) {
+                etNombre.error = "Campo obligatorio"
+                return@setOnClickListener
             }
+            if (telefono.isEmpty()) {
+                etTelefono.error = "Campo obligatorio"
+                return@setOnClickListener
+            }
+            if (direccion.isEmpty()) {
+                etDireccion.error = "Campo obligatorio"
+                return@setOnClickListener
+            }
+
+            val intent = Intent(this, PedidoActivity::class.java).apply {
+                putExtra("CLIENTE_NOMBRE", nombre)
+                putExtra("CLIENTE_TELEFONO", telefono)
+                putExtra("CLIENTE_DIRECCION", direccion)
+            }
+            startActivity(intent)
         }
     }
 }

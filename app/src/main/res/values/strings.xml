@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Loging</string>
+    <string name="app_name">Pizza Express</string>
+
+    <!-- Especialidades de Pizza -->
+    <string-array name="especialidades_pizza">
+        <item>Pepperoni Tradicional</item>
+        <item>Hawaiana (Jamón y Piña)</item>
+        <item>Mexicana (Chorizo, Jalapeño y Cebolla)</item>
+        <item>Carnes Frías / Suprema</item>
+        <item>Cuatro Quesos</item>
+    </string-array>
+
+    <!-- Opciones de Pago -->
+    <string-array name="opciones_pago">
+        <item>Efectivo</item>
+        <item>Tarjeta de Crédito / Débito</item>
+        <item>Transferencia SPEI</item>
+    </string-array>
 </resources>
